@@ -1,5 +1,4 @@
-import { where } from "sequelize";
-import Product from "../models/ProductModel";
+import Product from "../models/ProductModel.js";
 
 export const getAllProdcuts = async (req, res) => {
   try {
@@ -20,45 +19,49 @@ export const getProductById = async (req, res) => {
     res.json(product[0]);
   } catch (error) {
     res.json({ message: error.message });
-}
+  }
 };
 
-export const createProduct = async(req,res)=>{
-    try{
-        await Product.create(req.body);
-        res.json({
-            "message" : "Product Created"
-        });
-    }catch(error){
-        res.json({ message: error.message });
-
-    }
+export const createProduct = async (req, res) => {
+  try {
+    await Product.create(req.body);
+    res.json({
+      "message": "Product Created Successfully..."
+    });
+  } catch (error) {
+    res.json({ message: error.message });
+  }
 }
 
 
-export const updateProduct = async(req,res)=>{
-    try{
-        await Product.update(req.body,{
-            where:{
-                id:req.params.id
-            }
-        });
-    }catch(error){
-        res.json({ message: error.message });
-        
-    }
+export const updateProduct = async (req, res) => {
+  try {
+    await Product.update(req.body, {
+      where: {
+        id: req.params.id
+      }
+    });
+    res.json({
+      "message" : "Product updated Successfully..."
+    });
+  } catch (error) {
+    res.json({ message: error.message });
+  }
 }
 
-export const deleteProduct = async(req,res)=>{
-    try{
-        await Product.destroy({
-           where:{
-               id:req.params.id
-           }
-        });
-    }catch(error){
-        res.json({ message: error.message });
-    }
+export const deleteProduct = async (req, res) => {
+  try {
+    await Product.destroy({
+      where: {
+        id: req.params.id
+      }
+    });
+    res.json({
+      "message" : "Product deleted Successfully..."
+    });
+  } catch (error) {
+    res.json({ message: error.message });
+  }
 }
 
 
