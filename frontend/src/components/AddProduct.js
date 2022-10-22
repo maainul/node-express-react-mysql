@@ -1,11 +1,12 @@
 import { useState } from 'react'
 import axios from "axios";
 import { useNavigate } from 'react-router-dom';
+import UserService from '../../services/UserService';
  
 const AddProduct = () => {
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState('');
-    const history = useNavigate();
+    const navigate = useNavigate();
  
     const saveProduct = async (e) => {
         e.preventDefault();
@@ -13,7 +14,7 @@ const AddProduct = () => {
             title: title,
             price: price
         });
-        history.push("/");
+        navigate.push("/");
     }
  
     return (
