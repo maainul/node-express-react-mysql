@@ -11,8 +11,6 @@ function App() {
             <Route exact path="/" element={<ProductList />} />
             <Route path="/add" element={<AddProduct />} />
             <Route path="/edit/:id" element={<EditProduct />} />
-            {/* <Route path="/add"><AddProduct /></Route>
-            <Route path="/edit/:id" element={<EditProduct />} /> */}
           </Routes>
         </div>
       </BrowserRouter>

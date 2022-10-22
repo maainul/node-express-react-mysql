@@ -1,8 +1,8 @@
 module.exports = {
     HOST:"localhost",
-    USER:"root",
-    PASSWORD:"root",
-    DB:"mern_db",
+    USER:'root',
+    PASSWORD:'root',
+    DB:'mern_db',
     dialect:"mysql",
     pool:{
         max:5,
