@@ -25,7 +25,7 @@ export default function MuiTextField() {
           label="Form Input"
           required
           value={value}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={(e: { target: { value: any; }; }) => setValue(e.target.value)}
           error={!value}
           helperText={
             !value ? "Required" : "Do not share your password with anyone"
