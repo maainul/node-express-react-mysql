@@ -84,9 +84,10 @@ const Team = () => {
         }}
       >
         <DataGrid
+          checkboxSelection
           rows={mockDataInvoices}
           columns={columns}
-          components={{ Toolbar: GridToolbar }}
+        
         />
       </Box>
     </Box>
